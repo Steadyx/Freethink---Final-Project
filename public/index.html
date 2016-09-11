@@ -1,12 +1,40 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="FreeThink">
   <head>
     <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Muli|Raleway" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="/css/normalize.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="/css/style.css" media="screen" title="no title" charset="utf-8">
     <title>Freethink</title>
   </head>
-  <body>
-    <main>
-      <h1>Index Page</h1>
+  <body ng-controller="MainController as main">
+    <header>
+      <ul>
+        <li><a ui-sref="home">Home</a></li>
+        <li><a ui-sref="register">Register</a></li>
+        <li><a ui-sref="login">Login</a></li>
+      </ul>
+    </header>
+
+    <main ui-view>
     </main>
+
+    <!--bower_components--->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-resource.min.js"></script>
+    <script src="//npmcdn.com/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="https://cdn.rawgit.com/auth0/angular-jwt/master/dist/angular-jwt.js"></script>
+
+    <!---Custom Javascript--->
+    <script src="/js/app.js" charset="utf-8"></script>
+    <script src="/js/models/user.js" charset="utf-8"></script>
+    <script src="/js/controllers/mainController.js" charset="utf-8"></script>
+    <script src="/js/controllers/loginController.js" charset="utf-8"></script>
+    <script src="/js/controllers/registerController.js" charset="utf-8"></script>
+    <script src="/js/controllers/userController.js" charset="utf-8"></script>
+    <script src="/js/services/authentication.js" charset="utf-8"></script>
+    <script src="/js/services/token.js" charset="utf-8"></script>
   </body>
 </html>

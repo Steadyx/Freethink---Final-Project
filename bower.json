@@ -1,0 +1,20 @@
+{
+  "name": "freethink-app",
+  "description": "",
+  "main": "app.js",
+  "authors": [
+    "Edward Kemp <edwardlanekemp@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/Steadyx/Freethink---Final-Project",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-ui-router": "^0.3.1"
+  }
+}
