@@ -6,18 +6,94 @@ body {
 header {
   display: flex;
   width: 100%;
-  background: black; }
+  justify-content: space-around;
+  align-items: center;
+  height: 4em;
+  position: fixed;
+  z-index: 10000; }
+  header h1 {
+    font-size: 2.5em;
+    margin-left: 1.5em;
+    flex: 1; }
   header ul {
     display: flex;
     width: 100%;
-    justify-content: space-around;
-    align-items: center; }
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0;
+    flex-wrap: wrap; }
     header ul li {
       list-style: none;
-      font-size: 1.5em; }
+      font-size: 1.5em;
+      margin: 0 2em; }
     header ul a {
-      color: white;
-      text-decoration: none; }
+      color: black;
+      text-decoration: none;
+      position: relative;
+      transition: 0.5s ease;
+      padding-bottom: 0.5em; }
+    header ul a:hover {
+      transition: 0.5s ease;
+      color: #c44e4e; }
+    header ul a::before {
+      content: '';
+      position: absolute;
+      height: 1px;
+      bottom: 0;
+      left: 0;
+      transform: scaleX(0);
+      transition: 0.5s ease;
+      width: 100%;
+      cursor: pointer; }
+    header ul a:hover::before {
+      content: '';
+      transform: scaleX(1);
+      background-color: #c44e4e; }
+
+.home-container {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-image: url("../images/free-think-hero.jpg");
+  color: black;
+  z-index: 10;
+  font-size: 1.5em; }
+  .home-container .landing {
+    text-align: center;
+    z-index: 1000;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; }
+    .home-container .landing .landing-info {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column; }
+    .home-container .landing h1 {
+      border-bottom: 1px solid black;
+      letter-spacing: 0.2em;
+      padding-bottom: 0.5em; }
+    .home-container .landing .img-container {
+      font-size: 1em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      color: white; }
+    .home-container .landing .img-container img {
+      width: 60%; }
+
+.profile-container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center; }
 
 .form {
   width: 100%;

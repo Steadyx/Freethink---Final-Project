@@ -2,28 +2,30 @@ angular
   .module("FreeThink")
   .controller("MainController", MainController);
 
-  MainController.$inject = ['TokenService', '$state', '$rootScope'];
-
+MainController.$inject = ["TokenService", "$state", "$rootScope"];
 function MainController(TokenService, $state, $rootScope) {
 
   var self = this;
-  this.currentuser = TokenService.decodeToken();
+
+  this.currentUser = TokenService.decodeToken();
   this.errorMessage = null;
 
-  this.logout = function() {
+  this.logout = function logout() {
     TokenService.clearToken();
-    $state.go('home');
-  };
+    this.currentUser = null;
+    $state.go("home");
+  }
 
-  $rootScope.$on('loggedIn', function(){
-    self.currentuser = TokenService.decodeToken();
+  $rootScope.$on("loggedIn", function() {
+    self.currentUser = TokenService.decodeToken();
   });
 
-  $rootScope.$on('unauthorized', function(){
-    $state.go('login');
+  $rootScope.$on("unauthorized", function() {
+    $state.go("login");
+    self.errorMessage = "You must be logged in!";
   });
 
-  $rootScope.$on('$stateChangeStart', function(){
+  $rootScope.$on("$stateChangeStart", function() {
     self.errorMessage = null;
   });
 }

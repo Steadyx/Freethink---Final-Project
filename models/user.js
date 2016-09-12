@@ -17,7 +17,11 @@ var UserSchema = new Schema({
   passwordHash: {
     type: String,
     required: true
-  }
+  },
+  ideas: [{
+    type: Schema.Types.ObjectId,
+    ref: 'Idea'
+  }]
 });
 
 UserSchema.set('toJSON', {
@@ -62,5 +66,13 @@ UserSchema.path('passwordHash')
 UserSchema.methods.validatePassword = function(password) {
   return bcrypt.compareSync(password, this.passwordHash);
 }
+
+// var Idea = mongoose.model('User', UserSchema);
+// Idea.findOne(_id)
+//   .populate('ideas')
+//   .exec(function(err, post) {
+//   console.log(post);
+// });
+
 
 module.exports = mongoose.model('User', UserSchema);

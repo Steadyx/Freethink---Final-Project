@@ -16,7 +16,7 @@ function Router($stateProvider, $urlRouterProvider) {
 
   $stateProvider
     .state('home', {
-      url: '/',
+      url: '/home',
       templateUrl: '/templates/home.html'
     })
 
@@ -32,6 +32,10 @@ function Router($stateProvider, $urlRouterProvider) {
     controller: 'RegisterController as register'
   })
 
+  .state('profile', {
+    url: '/user',
+    templateUrl: '/templates/profile.html',
+  })
   $urlRouterProvider.otherwise("/home");
 
 }
