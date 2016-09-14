@@ -1,0 +1,47 @@
+<div class="brainstorm-container">
+  <h1>Come Up With Some Ideas</h1>
+  <div class="ideas-container">
+
+    <div class="ideas">
+
+      <div class="col" ui-sref="ideasShow({id: idea._id})" ng-repeat="idea in ideas.all">
+        <h1>{{idea.title}}</h1>
+        <p>{{idea.body}}</p>
+
+      </div>
+      <!-- <div class="col">
+        <form ng-submit="idea.save()">
+          <input type="text" placeholder="Title" ng-model="idea.new.title">
+          <textarea type="text" placeholder="Body" ng-model="idea.new.body"></textarea>
+        </form>
+      </div>
+    </div>
+
+    <div class="ideas">
+      <div class="col">
+        <form ng-submit="idea.save()">
+         <input type="text" placeholder="Title" ng-model="idea.new.title">
+         <textarea type="text" placeholder="Body" ng-model="idea.new.body"></textarea>
+        </form>
+      </div>
+      <div class="col">
+        <form ng-submit="idea.save()">
+          <input type="text" placeholder="Title" ng-model="idea.new.title">
+          <textarea type="text" placeholder="Body" ng-model="idea.new.body"></textarea>
+          <input type="submit" value="Add To Favorites">
+
+        </form>
+      </div>
+    </div> -->
+
+    </div>
+
+    <footer>
+      <div class="Add-Idea" ui-sref="ideas">
+        <h1>Add To Favorites</h1>
+      </div>
+      <div class="profile-settings" ui-sref="profile">
+        <h1>Profile</h1>
+      </div>
+    </footer>
+  </div>

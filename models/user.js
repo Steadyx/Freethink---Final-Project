@@ -14,14 +14,14 @@ var UserSchema = new Schema({
     required: true,
     unique: true
   },
-  passwordHash: {
-    type: String,
-    required: true
-  },
   ideas: [{
     type: Schema.Types.ObjectId,
     ref: 'Idea'
-  }]
+  }],
+  passwordHash: {
+    type: String,
+    required: true
+  }
 });
 
 UserSchema.set('toJSON', {

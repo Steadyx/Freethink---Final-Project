@@ -1,3 +1,26 @@
 <div class="profile-container">
- <h1>{{main.currentUser.name}}</h1>
+
+  <h1>
+    {{user.currentUser.name}}
+  </h1>
+
+  <div class="idea-container">
+    <h1>Idea Bank</h1>
+    <div class="idea-bank">
+      <div class="idea-col" ng-repeat="idea in user.currentUser.ideas">
+        <h3>{{idea.title}}</h3>
+        <p>
+          {{idea.body}}
+        </p>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div class="Add-Idea" ui-sref="ideas">
+      <h1>Brainstorm</h1>
+    </div>
+    <div class="profile-settings">
+      <h1>Profile Settings</h1>
+    </div>
+  </footer>
 </div>

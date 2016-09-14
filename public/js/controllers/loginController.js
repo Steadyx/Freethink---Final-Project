@@ -11,7 +11,7 @@ function LoginController(User, $state, $rootScope) {
   this.submit = function submit() {
     User.login(this.credentials, function(res) {
         $rootScope.$broadcast("loggedIn");
-        $state.go("profile");
+        $state.go("users");
     });
   }
 }

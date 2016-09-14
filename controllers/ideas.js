@@ -1,4 +1,4 @@
-var Idea = require('../models/brainstorm');
+var Idea = require('../models/idea');
 
 
 
@@ -8,7 +8,7 @@ function ideasIndex(req, res) {
     if (err) {
       return res.status(500).json(err);
 
-    } else {
+    }else{
       return res.status(200).json(ideas);
     }
   });
@@ -35,5 +35,4 @@ module.exports = {
   index: ideasIndex,
   create: ideasCreate,
   show: ideasShow
-
 }

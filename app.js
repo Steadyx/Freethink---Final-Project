@@ -15,8 +15,10 @@ var databaseURI = require('./config/db')(environment);
 
 var port = process.env.PORT || 3000;
 
+
 mongoose.connect(databaseURI);
 
+mongoose.Promise = bluebird;
 // If the connection is successful
 mongoose.connection.on('connected', function() {
   console.log('Mongoose default connection open to ' + databaseURI);

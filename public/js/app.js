@@ -32,10 +32,28 @@ function Router($stateProvider, $urlRouterProvider) {
     controller: 'RegisterController as register'
   })
 
+  // .state('users', {
+  //   url: '/users',
+  //   templateUrl: '/templates/users.html',
+  //   controller: 'UsersController as users'
+  // })
+
   .state('profile', {
-    url: '/user',
+    url: '/users' ,
     templateUrl: '/templates/profile.html',
+    controller: 'UsersController as user'
   })
+  .state('ideas', {
+    url: '/ideas',
+    templateUrl: '/templates/ideas/ideas.html',
+    controller: 'ideasController as ideas'
+  })
+  .state('ideasShow', {
+    url: '/show/:id',
+    templateUrl: '/templates/ideas/ideaShow.html',
+    controller: 'ideasShowController as ideas'
+  })
+
   $urlRouterProvider.otherwise("/home");
 
 }

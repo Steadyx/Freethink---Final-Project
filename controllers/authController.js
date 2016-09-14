@@ -15,6 +15,7 @@ function register(req, res) {
       id: user._id,
       name: user.name
 
+
     };
 
     var token = jwt.sign(payload, secret, {
@@ -45,9 +46,10 @@ function login(req, res) {
       });
     }
     var payload = {
-      _id: user._id,
-      name: user.name
-    };
+          _id: user._id,
+          name: user.name
+        };
+
     var token = jwt.sign(payload, secret, {
 
       expiresIn: 60 * 60 * 24

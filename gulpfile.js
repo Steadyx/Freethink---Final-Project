@@ -1,8 +1,17 @@
 var gulp = require('gulp'),
   browserSync = require('browser-sync'),
+  reload = browserSync.reload,
   sass = require('gulp-sass'),
   wiredep = require('wiredep').stream,
   inject = require('gulp-inject');
+
+
+var src = {
+  scss: './public/scss/*.scss',
+  css: './public/css/',
+  html: './public/templates/*.html'
+};
+
 
 gulp.task('serve', ['sass'], function() {
 
@@ -11,15 +20,29 @@ gulp.task('serve', ['sass'], function() {
     proxy: 'localhost:3000'
 
   })
-  gulp.watch("./public/scss/*.scss", ['sass']);
-  gulp.watch("app/*.html").on('change', browserSync.reload);
+  gulp.watch(src.scss, ['sass']);
+  gulp.watch(src.html).on('change', reload);
+});
+
+gulp.task('templates', function() {
+  return gulp.src(src.html)
+    .pipe(swig({
+      defaults: {
+        cache: false
+      }
+    }))
+    .pipe(gulp.dest(src.html))
+    .on("end", reload);
 });
 
 gulp.task('sass', function() {
-  return gulp.src("./public/scss/*.scss")
+  return gulp.src(src.scss)
     .pipe(sass())
-    .pipe(gulp.dest("./public/css/"))
-    .pipe(browserSync.stream());
+    .pipe(gulp.dest(src.css))
+    .pipe(reload({
+      stream: true
+    }));
 });
+
 
 gulp.task('default', ['serve']);

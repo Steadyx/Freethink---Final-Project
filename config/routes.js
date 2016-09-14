@@ -34,16 +34,26 @@ router
   .post('/login',
     authController.login);
 router
+  .all(secureRoute)
   .route('/users')
   .get(usersController.index);
-
 router
+  .all(secureRoute)
+  .route('/users/:id')
+  .get(usersController.show);
+router
+  .all(secureRoute)
   .route('/ideas')
   .get(ideasController.index);
 
 router
-  .route('/ideas/:id')
   .all(secureRoute)
-  .get(ideasController.index);
+  .route('/ideas/:id')
+  .get(ideasController.show);
+
+router
+  .all(secureRoute)
+  .route('/ideas/:id')
+  .get(ideasController.create);
 
 module.exports = router;

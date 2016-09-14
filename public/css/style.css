@@ -74,6 +74,20 @@ header {
       justify-content: center;
       align-items: center;
       flex-direction: column; }
+      .home-container .landing .landing-info .authorization {
+        height: 10vh;
+        display: flex;
+        justify-content: center;
+        align-items: center; }
+        .home-container .landing .landing-info .authorization span {
+          padding: 0.2em 1em;
+          margin: 0 0.5em;
+          border: 1px solid black;
+          cursor: pointer;
+          transition: 0.5s ease; }
+        .home-container .landing .landing-info .authorization span:hover {
+          background-color: rgba(196, 78, 78, 0.3);
+          border-radius: 2em; }
     .home-container .landing h1 {
       border-bottom: 1px solid black;
       letter-spacing: 0.2em;
@@ -92,8 +106,73 @@ header {
   display: flex;
   width: 100%;
   height: 100vh;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  background-color: #f8b195; }
+  .profile-container .idea-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: left;
+    position: relative;
+    width: 50%;
+    margin-bottom: 15em; }
+  .profile-container .idea-bank {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    position: absolute;
+    width: 100%;
+    height: 30vh;
+    overflow-y: scroll; }
+    .profile-container .idea-bank .idea-col {
+      margin: 1em;
+      padding: 0.5em 1.5em;
+      border: 1px solid black;
+      height: 10vh; }
+
+.brainstorm-container {
+  display: flex;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap; }
+  .brainstorm-container .ideas-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 75%; }
+    .brainstorm-container .ideas-container .ideas {
+      display: flex;
+      flex-wrap: wrap; }
+      .brainstorm-container .ideas-container .ideas .col {
+        border: 1px solid black;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+        flex-direction: column;
+        padding: .5em;
+        margin: .5em;
+        cursor: pointer; }
+        .brainstorm-container .ideas-container .ideas .col form {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          align-items: center;
+          height: 100%; }
+
+.idea-show-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column; }
 
 .form {
   width: 100%;
@@ -116,3 +195,20 @@ header {
       .form .form-container form label {
         margin: 0.5em 0;
         font-size: 1.5em; }
+
+footer {
+  background-color: #00a5d0;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%; }
+  footer div {
+    cursor: pointer;
+    border-right: 1px solid black;
+    flex: 1;
+    text-align: center; }
+  footer div:last-of-type {
+    border: none; }

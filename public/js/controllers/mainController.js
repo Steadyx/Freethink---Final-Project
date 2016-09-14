@@ -10,7 +10,7 @@ function MainController(TokenService, $state, $rootScope) {
   this.currentUser = TokenService.decodeToken();
   this.errorMessage = null;
 
-  this.logout = function logout() {
+  this.logout = function() {
     TokenService.clearToken();
     this.currentUser = null;
     $state.go("home");
@@ -18,6 +18,8 @@ function MainController(TokenService, $state, $rootScope) {
 
   $rootScope.$on("loggedIn", function() {
     self.currentUser = TokenService.decodeToken();
+    $state.go("profile");
+
   });
 
   $rootScope.$on("unauthorized", function() {
