@@ -1,0 +1,10 @@
+<div class="users-container">
+  <h1>Collaborate</h1>
+  <div class="users-row">
+    <div class="users" ng-repeat="friend in users.all" ng-click="users.befriend(friend)">
+      <p>
+        {{friend.name}}
+      </p>
+    </div>
+  </div>
+</div>

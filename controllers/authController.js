@@ -6,9 +6,7 @@ function register(req, res) {
 
   User.create(req.body, function(err, user){
 
-    if(err) {
-      return res.status('400').json(err);
-    }
+    if(err) return res.status('400').json(err);
 
     var payload = {
 
@@ -25,8 +23,8 @@ function register(req, res) {
     return res.status(200).json({
       message: "Success",
       token: token
-    })
-  })
+    });
+  });
 
 }
 
@@ -37,24 +35,16 @@ function login(req, res) {
 
   }, function(err, user) {
 
-    if(err) {
-      res.send(500).json(err)
-    };
-    if(!user.validatePassword(req.body.password)){
+    if(err) { res.send(500).json(err) };
+    if(!user || !user.validatePassword(req.body.password)){
       return res.status(401).json({
         message: 'Invalid Credentials'
       });
     }
-    var payload = {
-          _id: user._id,
-          name: user.name
-        };
+    var payload = { _id: user._id, name: user.name };
 
-    var token = jwt.sign(payload, secret, {
-
-      expiresIn: 60 * 60 * 24
-
-    })
+    var token = jwt.sign(payload, secret, { expiresIn: 60 * 60 * 24 });
+    
     return res.status(200).json({
       message: 'Success',
       token: token

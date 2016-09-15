@@ -102,14 +102,61 @@ header {
     .home-container .landing .img-container img {
       width: 60%; }
 
-.profile-container {
+.users-container {
   display: flex;
-  width: 100%;
-  height: 100vh;
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
-  background-color: #f8b195; }
+  height: 100vh; }
+  .users-container h1 {
+    letter-spacing: .2em; }
+  .users-container .users-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    flex-wrap: wrap; }
+    .users-container .users-row .users {
+      flex: 1 0 10em;
+      font-size: 2em;
+      border: 1px solid black;
+      margin: .5em .5em;
+      text-align: center;
+      cursor: pointer; }
+
+.profile-container {
+  display: flex;
+  width: 100%;
+  height: 110vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #f8b195;
+  position: relative; }
+  .profile-container .people {
+    display: flex;
+    width: 20%;
+    justify-content: space-around;
+    align-items: center;
+    align-self: flex-start;
+    flex-wrap: wrap;
+    background-color: #f0f0f0;
+    padding: 1em;
+    margin-left: 1.5em;
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin-top: 5em;
+    z-index: 100; }
+    .profile-container .people .title {
+      width: 100%;
+      text-align: center; }
+    .profile-container .people .col {
+      flex: 1;
+      margin: .5em .5em;
+      padding: .5em 1.5em;
+      border: 1px solid black;
+      cursor: pointer; }
   .profile-container .idea-container {
     display: flex;
     justify-content: center;
@@ -117,7 +164,7 @@ header {
     flex-direction: column;
     text-align: left;
     position: relative;
-    width: 50%;
+    width: 70%;
     margin-bottom: 15em; }
   .profile-container .idea-bank {
     display: flex;
@@ -136,35 +183,40 @@ header {
 
 .brainstorm-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   flex-direction: column;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  height: 100vh; }
   .brainstorm-container .ideas-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    width: 75%; }
-    .brainstorm-container .ideas-container .ideas {
+    flex-direction: column; }
+    .brainstorm-container .ideas-container .col {
+      border: 1px solid black;
       display: flex;
-      flex-wrap: wrap; }
-      .brainstorm-container .ideas-container .ideas .col {
-        border: 1px solid black;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: wrap;
+      flex-direction: column;
+      padding: 0.5em;
+      margin: 0.5em;
+      cursor: pointer; }
+      .brainstorm-container .ideas-container .col form {
         display: flex;
+        flex-direction: column;
         justify-content: space-around;
         align-items: center;
-        flex-wrap: wrap;
-        flex-direction: column;
-        padding: .5em;
-        margin: .5em;
-        cursor: pointer; }
-        .brainstorm-container .ideas-container .ideas .col form {
-          display: flex;
-          flex-direction: column;
-          justify-content: space-around;
-          align-items: center;
-          height: 100%; }
+        height: 100%; }
+
+.ideas-create-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+  height: 100vh; }
 
 .idea-show-container {
   display: flex;
@@ -173,28 +225,49 @@ header {
   align-items: center;
   height: 100vh;
   flex-direction: column; }
-
-.form {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column; }
-  .form .form-container {
+  .idea-show-container .idea-col {
     display: flex;
     width: 100%;
     justify-content: center;
     align-items: center;
     flex-direction: column; }
-    .form .form-container form {
+    .idea-show-container .idea-col form {
       display: flex;
       flex-direction: column;
       width: 70vh; }
-      .form .form-container form input,
-      .form .form-container form label {
+      .idea-show-container .idea-col form input,
+      .idea-show-container .idea-col form label {
         margin: 0.5em 0;
         font-size: 1.5em; }
+  .idea-show-container .idea-edit-form {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; }
+    .idea-show-container .idea-edit-form form {
+      display: flex;
+      flex-direction: column;
+      width: 70vh; }
+      .idea-show-container .idea-edit-form form input,
+      .idea-show-container .idea-edit-form form label {
+        margin: 0.5em 0;
+        font-size: 1.5em; }
+
+.form-container {
+  display: flex;
+  height: 100vh;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column; }
+  .form-container form {
+    display: flex;
+    flex-direction: column;
+    width: 50%; }
+    .form-container form input,
+    .form-container form label {
+      margin: .5em 0;
+      font-size: 2em; }
 
 footer {
   background-color: #00a5d0;
@@ -210,5 +283,25 @@ footer {
     border-right: 1px solid black;
     flex: 1;
     text-align: center; }
-  footer div:last-of-type {
-    border: none; }
+    footer div input {
+      border: none;
+      background-color: inherit;
+      font-size: 2em;
+      font-weight: bold;
+      cursor: pointer; }
+
+input[type="submit"],
+input[type="button"] {
+  background-color: inherit;
+  border: 1px solid black;
+  align-self: flex-start;
+  cursor: pointer;
+  transition: .5s ease;
+  padding: .5em 1.5em; }
+  input[type="submit"]:hover,
+  input[type="button"]:hover {
+    background-color: rgba(196, 78, 78, 0.3);
+    border-radius: 1em; }
+
+label {
+  border-radius: .5em; }

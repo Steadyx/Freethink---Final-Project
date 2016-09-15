@@ -1,5 +1,7 @@
 var mongoose = require('mongoose');
 var bcrypt = require('bcrypt');
+
+
 Schema = mongoose.Schema;
 
 var UserSchema = new Schema({
@@ -18,10 +20,15 @@ var UserSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'Idea'
   }],
+  friends: [{
+    type: Schema.ObjectId,
+    ref: "User"
+  }],
   passwordHash: {
     type: String,
     required: true
   }
+
 });
 
 UserSchema.set('toJSON', {
@@ -73,6 +80,5 @@ UserSchema.methods.validatePassword = function(password) {
 //   .exec(function(err, post) {
 //   console.log(post);
 // });
-
 
 module.exports = mongoose.model('User', UserSchema);

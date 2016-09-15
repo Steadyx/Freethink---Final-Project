@@ -4,9 +4,9 @@ angular
 
 ideasController.$inject = ['Idea'];
 
-function ideasController(User) {
+function ideasController(Idea) {
 
-  this.all = User.query();
+  this.all = Idea.query();
 
 }
 
@@ -14,22 +14,26 @@ angular
   .module('FreeThink')
   .controller('ideasCreateController', ideasCreateController);
 
-function ideasCreateController(Idea) {
+ideasCreateController.$inject = ['Idea', 'TokenService', "$state"];
+
+function ideasCreateController(Idea, TokenService, $state) {
 
   var self = this;
 
-  // this.all = Idea.query();
+  this.all = Idea.query();
 
   this.isCreating = false;
 
   this.new = {};
 
   this.create = function() {
+    this.currentUser = TokenService.decodeToken();
+    this.new.user = this.currentUser._id;
     console.log('ewldnibhj')
     Idea.save(this.new, function(idea) {
-      console.log('lmkenwed');
-      self.all.push(idea);
+      self.all.push(this.new);
       self.isCreating = false;
+      $state.go("profile");
     });
   }
 }
@@ -51,6 +55,8 @@ function ideasShowController(Idea, $state) {
   this.update = function() {
     this.selected.$update(function() {
       self.isEditing = false;
+      $state.go('profile')
+      console.log('I am Working');
     });
   }
 
