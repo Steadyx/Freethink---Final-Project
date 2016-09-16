@@ -109,7 +109,7 @@ header {
   flex-direction: column;
   height: 100vh; }
   .users-container h1 {
-    letter-spacing: .2em; }
+    letter-spacing: 0.2em; }
   .users-container .users-row {
     display: flex;
     justify-content: center;
@@ -120,7 +120,7 @@ header {
       flex: 1 0 10em;
       font-size: 2em;
       border: 1px solid black;
-      margin: .5em .5em;
+      margin: 0.5em;
       text-align: center;
       cursor: pointer;
       position: relative;
@@ -132,7 +132,7 @@ header {
         width: 100%;
         height: 100%;
         position: absolute;
-        transition: .5s ease; }
+        transition: 0.5s ease; }
       .users-container .users-row .users:hover:before {
         content: 'Add Collaborator';
         color: white;
@@ -170,8 +170,8 @@ header {
       text-align: center; }
     .profile-container .people .col {
       flex: 1;
-      margin: .5em .5em;
-      padding: .5em 1.5em;
+      margin: 0.5em;
+      padding: 0.5em 1.5em;
       border: 1px solid black;
       cursor: pointer; }
   .profile-container .idea-container {
@@ -229,10 +229,10 @@ header {
       justify-content: center;
       align-items: center;
       font-size: 2em; }
-      .brainstorm-container .col form label,
       .brainstorm-container .col form input,
+      .brainstorm-container .col form label,
       .brainstorm-container .col form textarea {
-        margin: .5em 0;
+        margin: 0.5em 0;
         width: 100%;
         align-self: flex-start; }
 
@@ -300,20 +300,20 @@ header {
     width: 50%; }
     .form-container form input,
     .form-container form label {
-      margin: .5em 0;
+      margin: 0.5em 0;
       font-size: 2em; }
     .form-container form input[type="button"] {
       background-color: inherit;
       border: 1px solid black;
       align-self: flex-start;
       cursor: pointer;
-      transition: .5s ease;
-      padding: .5em 1.5em; }
+      transition: 0.5s ease;
+      padding: 0.5em 1.5em; }
       .form-container form input[type="button"]:hover {
         background-color: rgba(196, 78, 78, 0.3);
         border-radius: 1em; }
     .form-container form label {
-      border-radius: .5em; }
+      border-radius: 0.5em; }
 
 footer {
   background-color: #00a5d0;

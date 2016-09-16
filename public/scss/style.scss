@@ -117,40 +117,40 @@ header {
     }
   }
 }
-.users-container{
+.users-container {
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
   height: 100vh;
-  h1{
-   letter-spacing: .2em;
+  h1 {
+    letter-spacing: 0.2em;
   }
-  .users-row{
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   width:90%;
-   flex-wrap: wrap;
-    .users{
+  .users-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    flex-wrap: wrap;
+    .users {
       flex: 1 0 10em;
       font-size: 2em;
       border: 1px solid black;
-      margin: .5em .5em;
+      margin: 0.5em;
       text-align: center;
       cursor: pointer;
       position: relative;
       cursor: pointer;
-      &:before{
+      &:before {
         content: '';
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
         position: absolute;
-        transition: .5s ease;
+        transition: 0.5s ease;
       }
-      &:hover:before{
+      &:hover:before {
         content: 'Add Collaborator';
         color: white;
         display: flex;
@@ -185,17 +185,16 @@ header {
     left: 0;
     margin-top: 5em;
     z-index: 100;
-    .title{
+    .title {
       width: 100%;
       text-align: center;
     }
-    .col{
+    .col {
       flex: 1;
-      margin: .5em .5em;
-      padding: .5em 1.5em;
+      margin: 0.5em;
+      padding: 0.5em 1.5em;
       border: 1px solid black;
       cursor: pointer;
-
     }
   }
   .idea-container {
@@ -238,32 +237,32 @@ header {
     align-items: center;
     flex-direction: column;
     width: 75%;
-    }
-    .col {
-      border: 1px solid black;
+  }
+  .col {
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 0.5em;
+    margin: 0.5em;
+    cursor: pointer;
+    width: 50%;
+    form {
       display: flex;
+      flex-direction: column;
+      width: 100%;
       justify-content: center;
       align-items: center;
-      flex-wrap: wrap;
-      flex-direction: column;
-      padding: 0.5em;
-      margin: 0.5em;
-      cursor: pointer;
-      width: 50%;
-      form{
-       display: flex;
-       flex-direction: column;
-       width: 100%;
-       justify-content: center;
-       align-items: center;
-       font-size: 2em;
-       label,
-       input,
-       textarea{
-         margin: .5em 0;
-         width: 100%;
-         align-self: flex-start;
-       }
+      font-size: 2em;
+      input,
+      label,
+      textarea {
+        margin: 0.5em 0;
+        width: 100%;
+        align-self: flex-start;
+      }
     }
   }
 }
@@ -297,18 +296,16 @@ header {
         margin: 0.5em 0;
         font-size: 1.5em;
       }
-      .buttons{
+      .buttons {
         display: flex;
         justify-content: space-around;
         align-items: center;
         width: 100%;
-        button{
+        button {
           background-color: none;
           border: none;
         }
-        input{
-
-        }
+        input {}
       }
     }
   }
@@ -330,35 +327,35 @@ header {
     }
   }
 }
-.form-container{
+.form-container {
   display: flex;
   height: 100vh;
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
-  form{
+  form {
     display: flex;
     flex-direction: column;
     width: 50%;
     input,
-    label{
-      margin: .5em 0;
+    label {
+      margin: 0.5em 0;
       font-size: 2em;
     }
-    input[type="button"]{
+    input[type="button"] {
       background-color: inherit;
       border: 1px solid black;
       align-self: flex-start;
       cursor: pointer;
-      transition: .5s ease;
-      padding: .5em 1.5em;
-      &:hover{
+      transition: 0.5s ease;
+      padding: 0.5em 1.5em;
+      &:hover {
         background-color: rgba(196, 78, 78,.3);
         border-radius: 1em;
       }
     }
-    label{
-      border-radius: .5em;
+    label {
+      border-radius: 0.5em;
     }
   }
 }
