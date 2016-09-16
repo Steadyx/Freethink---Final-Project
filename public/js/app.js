@@ -1,6 +1,6 @@
 angular
   .module('FreeThink', ['ui.router', 'ngResource', 'angular-jwt'])
-  .constant('API_URL', 'http://localhost:3000/api')
+  .constant('API_URL', '/api')
   .config(setupInterceptor)
   .config(Router);
 
