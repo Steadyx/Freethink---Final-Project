@@ -3,7 +3,8 @@ var express = require('express'),
   jwt = require('jsonwebtoken'),
   bluebird = require('bluebird'),
   bodyParser = require('body-parser'),
-  cors = require('cors');
+  cors = require('cors'),
+
 
 app = express();
 

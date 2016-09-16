@@ -9,12 +9,8 @@ function Idea($resource, API_URL) {
     id: '@_id'
   }, {
     update: {
-      method: "PUT"
+      method: "POST"
     }
-    // show: {
-    //   method: 'GET',
-    //   url: API_URL + '/idea'
-    //
-    // }
+
   });
 }

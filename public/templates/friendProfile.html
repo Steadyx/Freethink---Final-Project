@@ -1,0 +1,35 @@
+<div class="profile-container">
+
+  <h1>
+    {{friends.selected.name}}
+  </h1>
+
+  <div class="idea-container">
+
+    <h1>Idea Bank</h1>
+
+    <div class="idea-bank">
+
+      <div class="idea-col" ng-repeat="idea in friends.selected.ideas" ui-sref="ideasShow({id: idea._id})">
+        <h3>{{idea.title}}</h3>
+        <p>
+          {{idea.body}}
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+
+    <div class="Add-Idea" ui-sref="ideasCreate">
+      <h1>Brainstorm</h1>
+    </div>
+
+    <div class="profile-settings" ui-sref="profile" >
+      <h1>Profile</h1>
+    </div>
+
+  </footer>
+
+</div>

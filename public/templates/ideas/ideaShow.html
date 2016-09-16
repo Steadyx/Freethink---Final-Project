@@ -1,19 +1,37 @@
 <div class="idea-show-container">
 
-  <h1>{{ideas.selected.title}}</h1>
-  <p>
-    {{ideas.selected.body}}
-  </p>
-  <footer>
+  <div class="idea-col" ng-show="!ideas.isEditing" ng-click="ideas.isEditing=true">
+    <form>
+      <h1>Click To Edit Content</h1>
+      <label for="Title">Title:</label>
+      <input type="text" name="title" ng-model="ideas.selected.title">
+      <label for="">Body:</label>
+      <input type="text" name="body" ng-model="ideas.selected.body">
+    </form>
+  </div>
+  <!-- <button type="button">Edit</button> -->
 
-    <div class="Add-Idea" ui-sref="ideas">
+  <div class="idea-edit-form">
+    <form ng-show="ideas.isEditing" ng-submit="ideas.update()">
+      <h1>Edit Content</h1>
+      <label for="Title">Title:</label>
+      <input type="text" name="title" ng-model="ideas.selected.title">
+      <label for="">Body:</label>
+      <input type="text" name="body" ng-model="ideas.selected.body">
+      <div class="buttons">
+        <button>Update</button>
+        <input type="button" ng-click="ideas.delete()" value="Delete">
+      </div>
+    </form>
+  </div>
+
+  <footer>
+    <div class="Add-Idea" ui-sref="ideasCreate">
       <h1>Brainstorm</h1>
     </div>
-
     <div class="profile-settings">
       <h1>Profile Settings</h1>
     </div>
-
   </footer>
 
 </div>

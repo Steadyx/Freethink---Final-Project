@@ -4,23 +4,43 @@
     {{user.currentUser.name}}
   </h1>
 
+  <div class="people">
+    <div class="title">
+      <h3>Collaborators</h3>
+    </div>
+    <div class="col" ui-sref="friend({ id: friend._id })" ng-repeat="friend in user.currentUser.friends">
+      <p>
+          {{ friend.name }}
+      </p>
+    </div>
+  </div>
+
   <div class="idea-container">
+
     <h1>Idea Bank</h1>
+
     <div class="idea-bank">
-      <div class="idea-col" ng-repeat="idea in user.currentUser.ideas">
+
+      <div class="idea-col" ng-repeat="idea in user.currentUser.ideas" ui-sref="ideasShow({id: idea._id})">
         <h3>{{idea.title}}</h3>
         <p>
           {{idea.body}}
         </p>
       </div>
     </div>
+
   </div>
+
   <footer>
-    <div class="Add-Idea" ui-sref="ideas">
+
+    <div class="Add-Idea" ui-sref="ideasCreate">
       <h1>Brainstorm</h1>
     </div>
-    <div class="profile-settings">
-      <h1>Profile Settings</h1>
+
+    <div class="profile-settings" ui-sref="users" >
+      <h1>Add Collaborators</h1>
     </div>
+
   </footer>
+
 </div>

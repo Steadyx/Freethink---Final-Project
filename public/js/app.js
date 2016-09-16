@@ -22,37 +22,46 @@ function Router($stateProvider, $urlRouterProvider) {
 
   .state("login", {
     url: "/login",
-    templateUrl: "/templates/login.html",
+    templateUrl: "/templates/authentication/login.html",
     controller: "LoginController as login"
   })
 
   .state('register', {
     url: '/register',
-    templateUrl: '/templates/register.html',
+    templateUrl: '/templates/authentication/register.html',
     controller: 'RegisterController as register'
   })
 
-  // .state('users', {
-  //   url: '/users',
-  //   templateUrl: '/templates/users.html',
-  //   controller: 'UsersController as users'
-  // })
-
   .state('profile', {
-    url: '/users' ,
+    url: '/profile',
     templateUrl: '/templates/profile.html',
     controller: 'UsersController as user'
+  })
+  .state('users', {
+    url: '/users',
+    templateUrl: '/templates/users.html',
+    controller: 'UsersIndexController as users'
   })
   .state('ideas', {
     url: '/ideas',
     templateUrl: '/templates/ideas/ideas.html',
     controller: 'ideasController as ideas'
   })
+  .state('ideasCreate', {
+    url: '/ideas/new',
+    templateUrl: '/templates/ideas/ideasCreate.html',
+    controller: 'ideasCreateController as ideasCreate'
+  })
   .state('ideasShow', {
-    url: '/show/:id',
+    url: '/ideas/:id',
     templateUrl: '/templates/ideas/ideaShow.html',
     controller: 'ideasShowController as ideas'
   })
+  .state('friend', {
+    url: '/friends/:id',
+    templateUrl: '/templates/friendProfile.html',
+    controller: 'FriendsController as friends'
+  });
 
   $urlRouterProvider.otherwise("/home");
 
