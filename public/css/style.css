@@ -164,7 +164,8 @@ header {
     top: 0;
     left: 0;
     margin-top: 5em;
-    z-index: 100; }
+    z-index: 100;
+    border-radius: .2em; }
     .profile-container .people .title {
       width: 100%;
       text-align: center; }
@@ -173,7 +174,24 @@ header {
       margin: 0.5em;
       padding: 0.5em 1.5em;
       border: 1px solid black;
-      cursor: pointer; }
+      cursor: pointer;
+      position: relative;
+      border-radius: .5em; }
+      .profile-container .people .col:before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: .5s ease;
+        color: white; }
+      .profile-container .people .col:hover:before {
+        content: 'Collaborate';
+        background-color: #141414;
+        display: flex;
+        justify-content: center;
+        align-items: center; }
   .profile-container .idea-container {
     display: flex;
     justify-content: center;
@@ -250,7 +268,8 @@ header {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  flex-direction: column; }
+  flex-direction: column;
+  background-color: #f8b195; }
   .idea-show-container .idea-col {
     display: flex;
     width: 100%;
@@ -264,7 +283,7 @@ header {
       .idea-show-container .idea-col form input,
       .idea-show-container .idea-col form label {
         margin: 0.5em 0;
-        font-size: 1.5em; }
+        font-size: 2em; }
       .idea-show-container .idea-col form .buttons {
         display: flex;
         justify-content: space-around;
@@ -283,10 +302,24 @@ header {
       display: flex;
       flex-direction: column;
       width: 70vh; }
-      .idea-show-container .idea-edit-form form input,
+      .idea-show-container .idea-edit-form form input[type="text"],
       .idea-show-container .idea-edit-form form label {
         margin: 0.5em 0;
-        font-size: 1.5em; }
+        font-size: 2em; }
+      .idea-show-container .idea-edit-form form button {
+        background-color: inherit;
+        border: none;
+        font-size: 1.5em;
+        border: 1px solid black;
+        padding: .5em 1.5em;
+        cursor: pointer; }
+      .idea-show-container .idea-edit-form form input[type="button"] {
+        background-color: inherit;
+        border: none;
+        font-size: 1.5em;
+        border: 1px solid black;
+        padding: .5em 1.5em;
+        cursor: pointer; }
 
 .form-container {
   display: flex;
