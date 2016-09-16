@@ -127,7 +127,8 @@ header {
       text-align: center;
       cursor: pointer;
       position: relative;
-      cursor: pointer; }
+      cursor: pointer;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.65); }
       .users-container .users-row .users:before {
         content: '';
         top: 0;
@@ -172,7 +173,7 @@ header {
     height: 30vh;
     overflow-y: auto;
     border-radius: .2em;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.65); }
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.25); }
     .profile-container .people .title {
       width: 100%;
       text-align: center; }
@@ -221,7 +222,9 @@ header {
       margin: 1em;
       padding: 0.5em 1.5em;
       border: 1px solid black;
-      overflow-y: auto; }
+      overflow-y: auto;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.65);
+      cursor: pointer; }
 
 .brainstorm-container {
   display: flex;
