@@ -123,6 +123,8 @@ header {
   align-items: center;
   flex-direction: column;
   height: 100vh;
+  background-color: #f8b195;
+
   h1 {
     letter-spacing: 0.2em;
   }
@@ -132,6 +134,8 @@ header {
     align-items: center;
     width: 90%;
     flex-wrap: wrap;
+    height: 50vh;
+    overflow-y: auto;
     .users {
       flex: 1 0 10em;
       font-size: 2em;
@@ -240,7 +244,7 @@ header {
       margin: 1em;
       padding: 0.5em 1.5em;
       border: 1px solid black;
-      height: 10vh;
+      overflow-y: auto;
     }
   }
 }

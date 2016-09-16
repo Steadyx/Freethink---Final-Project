@@ -107,7 +107,8 @@ header {
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
-  height: 100vh; }
+  height: 100vh;
+  background-color: #f8b195; }
   .users-container h1 {
     letter-spacing: 0.2em; }
   .users-container .users-row {
@@ -115,7 +116,9 @@ header {
     justify-content: center;
     align-items: center;
     width: 90%;
-    flex-wrap: wrap; }
+    flex-wrap: wrap;
+    height: 50vh;
+    overflow-y: auto; }
     .users-container .users-row .users {
       flex: 1 0 10em;
       font-size: 2em;
@@ -214,7 +217,7 @@ header {
       margin: 1em;
       padding: 0.5em 1.5em;
       border: 1px solid black;
-      height: 10vh; }
+      overflow-y: auto; }
 
 .brainstorm-container {
   display: flex;
