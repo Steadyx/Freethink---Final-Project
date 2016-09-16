@@ -373,6 +373,8 @@ header {
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
+  background-color: #f8b195;
+
   form {
     display: flex;
     flex-direction: column;
@@ -382,6 +384,19 @@ header {
       margin: 0.5em 0;
       font-size: 2em;
     }
+    input[type="submit"]{
+      background-color: inherit;
+      border: 1px solid black;
+      cursor: pointer;
+      width: 20%;
+      padding: .5em 1.5em;
+      transition: .5s ease;
+      &:hover{
+       background-color: rgb(255, 255, 255);
+       color: black;
+       border-radius: .5em;
+      }
+    }
     input[type="button"] {
       background-color: inherit;
       border: 1px solid black;
@@ -389,6 +404,7 @@ header {
       cursor: pointer;
       transition: 0.5s ease;
       padding: 0.5em 1.5em;
+
       &:hover {
         background-color: rgba(196, 78, 78,.3);
         border-radius: 1em;

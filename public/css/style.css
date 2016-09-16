@@ -326,7 +326,8 @@ header {
   height: 100vh;
   justify-content: space-around;
   align-items: center;
-  flex-direction: column; }
+  flex-direction: column;
+  background-color: #f8b195; }
   .form-container form {
     display: flex;
     flex-direction: column;
@@ -335,6 +336,17 @@ header {
     .form-container form label {
       margin: 0.5em 0;
       font-size: 2em; }
+    .form-container form input[type="submit"] {
+      background-color: inherit;
+      border: 1px solid black;
+      cursor: pointer;
+      width: 20%;
+      padding: .5em 1.5em;
+      transition: .5s ease; }
+      .form-container form input[type="submit"]:hover {
+        background-color: white;
+        color: black;
+        border-radius: .5em; }
     .form-container form input[type="button"] {
       background-color: inherit;
       border: 1px solid black;
