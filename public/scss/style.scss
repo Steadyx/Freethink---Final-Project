@@ -394,7 +394,8 @@ header {
     input,
     label {
       margin: 0.5em 0;
-      font-size: 2em;
+      font-size: 2vw;
+      text-align: center;
     }
     input[type="submit"]{
       background-color: inherit;
@@ -444,7 +445,7 @@ footer {
     input {
       border: none;
       background-color: inherit;
-      font-size: 2em;
+      font-size: 2vw;
       font-weight: bold;
       cursor: pointer;
     }

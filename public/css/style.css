@@ -345,7 +345,8 @@ header {
     .form-container form input,
     .form-container form label {
       margin: 0.5em 0;
-      font-size: 2em; }
+      font-size: 2vw;
+      text-align: center; }
     .form-container form input[type="submit"] {
       background-color: inherit;
       border: 1px solid black;
@@ -387,6 +388,6 @@ footer {
     footer div input {
       border: none;
       background-color: inherit;
-      font-size: 2em;
+      font-size: 2vw;
       font-weight: bold;
       cursor: pointer; }

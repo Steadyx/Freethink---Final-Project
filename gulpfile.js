@@ -3,6 +3,7 @@ var gulp = require('gulp'),
   reload = browserSync.reload,
   sass = require('gulp-sass'),
   wiredep = require('wiredep').stream,
+  autoprefixer = require('gulp-autoprefixer'),
   inject = require('gulp-inject');
 
 
@@ -44,5 +45,14 @@ gulp.task('sass', function() {
     }));
 });
 
+gulp.task('prefix', function() {
+    gulp.src('./public/css/style.css')
+        .pipe(autoprefixer({
+            browsers: ['last 2 versions'],
+            cascade: false
+        }))
+        .pipe(gulp.dest(src.css))
+});
 
-gulp.task('default', ['serve']);
+
+gulp.task('default', ['serve', 'prefix']);
